@@ -216,7 +216,7 @@ footer img{width:40px;height:40px;border-radius:50%}
         <svg width="60" height="60" viewBox="0 0 24 24" style="margin:0 auto 14px"><circle cx="12" cy="12" r="11" fill="#5c9d36"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>Tak for din forespørgsel</h3>
         <p>Jeg kontakter dig hurtigst muligt. Haster det, så ring på <b>52 24 63 70</b>.</p>
-        <p class="note" style="margin-top:14px">Dit mailprogram er åbnet med din forespørgsel. Husk at trykke send.</p>
+        
       </div>
     </div>
   </div>
@@ -279,7 +279,7 @@ footer img{width:40px;height:40px;border-radius:50%}
     </div>
     <div class="info">
       <a href="tel:+4552246370"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg></i><p><small>Telefon</small>52 24 63 70</p></a>
-      <a href="mailto:evittrupo@gmail.com"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><p><small>E-mail</small>evittrupo@gmail.com</p></a>
+      <a href="mailto:vittrupudendoersservice@gmail.com"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><p><small>E-mail</small>vittrupudendoersservice@gmail.com</p></a>
       <div><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><p><small>Område</small>Brande og omegn</p></div>
     </div>
   </div>
@@ -295,8 +295,9 @@ const P=[["1193","1207","Rens af brosten"],["1405","1449","Ukrudt fjernet fra be
 const arrow='<span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#145a30" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
 document.getElementById('pairs').innerHTML=P.map(([a,b,t])=>`<div class="pair"><div class="imgs"><figure><img src="img/${a}.jpg" alt="${t}, før" loading="lazy"><figcaption>Før</figcaption></figure>${arrow}<figure><img src="img/${b}.jpg" alt="${t}, efter" loading="lazy"><figcaption>Efter</figcaption></figure></div><h3>${t}</h3></div>`).join('');
 const h=document.getElementById('hdr'),on=()=>h.classList.toggle('solid',scrollY>40);addEventListener('scroll',on,{passive:true});on();
+const KEY='';/* Web3Forms access key */
 const f=document.getElementById('qf'),box=document.querySelector('.quote'),err=document.getElementById('err');
-f.addEventListener('submit',e=>{e.preventDefault();if(!f.navn.value.trim()||!f.telefon.value.trim()){err.hidden=false;return}err.hidden=true;const y=[...f.querySelectorAll('input[name=ydelse]:checked')].map(x=>x.value).join(', ')||'Ikke angivet';const body=`Navn: ${f.navn.value}\nTelefon: ${f.telefon.value}\nE-mail: ${f.email.value}\nAdresse: ${f.adresse.value}\nYdelser: ${y}\n\n${f.besked.value}`;location.href='mailto:evittrupo@gmail.com?subject='+encodeURIComponent('Tilbud: '+f.navn.value)+'&body='+encodeURIComponent(body);box.classList.add('sent')});
+f.addEventListener('submit',e=>{e.preventDefault();if(!f.navn.value.trim()||!f.telefon.value.trim()){err.hidden=false;return}err.hidden=true;const y=[...f.querySelectorAll('input[name=ydelse]:checked')].map(x=>x.value).join(', ')||'Ikke angivet';const body=`Navn: ${f.navn.value}\nTelefon: ${f.telefon.value}\nE-mail: ${f.email.value}\nAdresse: ${f.adresse.value}\nYdelser: ${y}\n\n${f.besked.value}`;const btn=f.querySelector('button[type=submit]');if(!KEY){location.href='mailto:vittrupudendoersservice@gmail.com?subject='+encodeURIComponent('Tilbud: '+f.navn.value)+'&body='+encodeURIComponent(body);box.classList.add('sent');return}btn.disabled=true;btn.textContent='Sender…';fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:KEY,subject:'Ny forespørgsel fra hjemmesiden: '+f.navn.value,from_name:'Vittrup Udendørsservice – hjemmeside',replyto:f.email.value||undefined,Navn:f.navn.value,Telefon:f.telefon.value,'E-mail':f.email.value,Adresse:f.adresse.value,Ydelser:y,Besked:f.besked.value})}).then(r=>r.json()).then(j=>{if(!j.success)throw 0;box.classList.add('sent')}).catch(()=>{btn.disabled=false;btn.textContent='Send forespørgsel';err.textContent='Noget gik galt. Ring venligst på 52 24 63 70.';err.hidden=false})});
 }</script>
 </body>
 </html>
