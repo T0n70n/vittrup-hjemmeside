@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vittrup Udendørsservice</title>
+<meta name="description" content="Vittrup Udendørsservice i Brande: fliserens, hækklipning, rens af tag og ovenlys samt tagrender. Få et gratis og uforpligtende tilbud.">
+<link rel="icon" href="img/logo.png">
+<meta property="og:title" content="Vittrup Udendørsservice – Brande">
+<meta property="og:description" content="Træfældning, hækklipning, fliserens, tag og tagrender i Brande og omegn. Gratis tilbud.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: lokal håndværker, ærlig og konkret, men poleret
+   IDEA: logoets før/efter-deling: tilgroet til venstre, skarpt til højre
+   PICTURE: ægte fotos, beskåret så før og efter viser det samme
+   COLOUR and TYPE: logoets dybgrønne bånd, hvid, frisk bladgrøn accent; Montserrat 800 som logoet + Inter
+   LAYOUT: fotohero med tilbudskort, svævende tillidskort, ydelser, før/efter, om, kontakt */
+:root{--g:#0c3a1f;--g2:#145a30;--leaf:#5c9d36;--leaf2:#4a8829;--mint:#e9f3e3;--stone:#f4f6f2;--ink:#152019;--muted:#5b675f;--line:#e2e7df;--r:16px;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font:16px/1.65 Inter,system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Montserrat,Inter,sans-serif;line-height:1.08;text-wrap:balance;font-weight:800}
+h2{font-size:clamp(30px,4vw,44px);color:var(--g);margin-bottom:14px}
+h3{font-size:19px;color:var(--g);font-weight:700}
+.wrap{max-width:1200px;margin:0 auto;padding:0 max(4vw,18px)}
+.band{padding:clamp(64px,8vw,112px) 0}
+.head{max-width:640px;margin-bottom:44px}
+.head p{color:var(--muted);font-size:17px}
+.kicker{display:inline-flex;align-items:center;gap:8px;color:var(--leaf2);font-weight:600;font-size:15px;margin-bottom:10px}
+.kicker:before{content:"";width:22px;height:2px;background:var(--leaf)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:30;transition:background .25s,box-shadow .25s}
+header.solid{background:rgba(255,255,255,.97);box-shadow:0 6px 24px rgba(12,58,31,.08);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand img{width:58px;height:58px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.brand b{font-family:Montserrat;font-weight:800;font-size:21px;letter-spacing:.5px;line-height:1;display:block}
+.brand small{display:block;font-family:Montserrat;font-weight:700;font-size:10.5px;letter-spacing:2.4px;opacity:.85;margin-top:4px}
+nav{display:flex;align-items:center;gap:28px}
+nav .lnk{text-decoration:none;font-weight:500;color:rgba(255,255,255,.88)}
+nav .lnk:hover{color:#fff}
+.solid .brand{color:var(--g)}
+.solid nav .lnk{color:var(--muted)}
+.solid nav .lnk:hover{color:var(--g)}
+.phone{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;color:#fff;white-space:nowrap}
+.phone i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.16)}
+.solid .phone{color:var(--g)}
+.solid .phone i{background:var(--mint)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--leaf);color:#fff!important;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:16px;white-space:nowrap;transition:background .2s,transform .2s;box-shadow:0 6px 18px rgba(92,157,54,.35)}
+.btn:hover{background:var(--leaf2);transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.7);box-shadow:none}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #8cc56a;outline-offset:2px}
+
+/* hero */
+.hero{position:relative;color:#fff;background:#0a2814 url(img/hero.jpg) center 45%/cover;padding:150px 0 130px}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(7,30,16,.95) 0%,rgba(7,30,16,.82) 42%,rgba(7,30,16,.35) 100%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:999px;font-size:14px;font-weight:500;margin-bottom:22px}
+.pill:before{content:"";width:8px;height:8px;border-radius:50%;background:#8cd35f;box-shadow:0 0 0 4px rgba(140,211,95,.25)}
+.hero h1{font-size:clamp(38px,5.4vw,62px);margin-bottom:20px}
+.hero h1 span{color:#a8dc84}
+.hero p.intro{font-size:19px;max-width:540px;opacity:.9;margin-bottom:30px}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap}
+
+.quote{background:#fff;color:var(--ink);border-radius:22px;box-shadow:0 30px 70px rgba(0,0,0,.35);overflow:hidden}
+.qtop{background:var(--g);color:#fff;padding:20px 28px}
+.qtop h2{color:#fff;font-size:24px;margin:0}
+.qtop p{font-size:14px;opacity:.8}
+.f{display:grid;gap:12px;padding:22px 28px 26px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:13.5px;font-weight:600;display:block;color:#2b3a30}
+input,textarea{width:100%;margin-top:5px;padding:12px 14px;border:1px solid #d3dbd0;border-radius:10px;font:inherit;font-size:16px;background:var(--stone);transition:border-color .2s,background .2s}
+input:focus,textarea:focus{background:#fff;border-color:var(--leaf)}
+textarea{min-height:80px;resize:vertical}
+fieldset{border:0}
+legend{font-size:13.5px;font-weight:600;margin-bottom:7px;color:#2b3a30}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{font-weight:500;display:flex;align-items:center;gap:7px;border:1px solid #d3dbd0;border-radius:999px;padding:7px 13px;cursor:pointer;background:#fff;font-size:14px;transition:all .15s}
+.chips input{width:auto;margin:0;accent-color:var(--leaf)}
+.chips label:has(input:checked){background:var(--mint);border-color:var(--leaf);color:var(--g)}
+.f .btn{width:100%;margin-top:4px}
+.note{font-size:12.5px;color:var(--muted);text-align:center}
+.ok{display:none;text-align:center;padding:40px 28px}
+.ok h3{font-size:24px;margin-bottom:8px}
+.sent .f{display:none}.sent .ok{display:block}
+
+/* trust */
+.trust{position:relative;z-index:2;margin-top:-56px}
+.trust .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.trust div{background:#fff;border-radius:var(--r);padding:22px 24px;display:flex;gap:16px;align-items:center;box-shadow:0 14px 40px rgba(12,58,31,.12)}
+.trust i{flex:none;display:grid;place-items:center;width:50px;height:50px;border-radius:14px;background:var(--mint)}
+.trust b{display:block;font-family:Montserrat;color:var(--g);font-size:16px}
+.trust span{font-size:14px;color:var(--muted)}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(12,58,31,.12)}
+.card .ph{overflow:hidden}
+.card img{aspect-ratio:1;object-fit:cover;width:100%;transition:transform .5s}
+.card:hover img{transform:scale(1.05)}
+.card div.t{padding:20px 22px 24px}
+.card p{color:var(--muted);font-size:15px;margin-top:8px}
+
+/* before/after */
+.ba{background:var(--stone)}
+.pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.pair{background:#fff;border-radius:20px;padding:12px;box-shadow:0 2px 0 var(--line)}
+.imgs{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative}
+.imgs figure{position:relative;border-radius:12px;overflow:hidden}
+.imgs img{aspect-ratio:1;object-fit:cover;width:100%}
+.imgs figcaption{position:absolute;left:10px;top:10px;background:rgba(10,20,14,.72);color:#fff;font-size:13px;font-weight:600;padding:3px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+.imgs figure+figure figcaption{background:var(--leaf)}
+.imgs .arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.25);z-index:1}
+.pair h3{font-size:17px;padding:14px 6px 4px}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.pic{position:relative}
+.pic .main{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.pic .badge{position:absolute;right:-22px;bottom:-22px;width:140px;height:140px;border-radius:50%;border:6px solid #fff;box-shadow:0 12px 30px rgba(0,0,0,.2)}
+.about p{color:var(--muted);font-size:17px}
+.steps{display:grid;gap:14px;margin:30px 0}
+.steps div{display:flex;gap:16px;align-items:flex-start;background:var(--stone);border-radius:14px;padding:16px 18px}
+.steps em{flex:none;font-style:normal;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--g);color:#fff;font-family:Montserrat;font-weight:800}
+.steps b{display:block;color:var(--g);font-family:Montserrat}
+.steps span{font-size:15px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--g) radial-gradient(circle at 85% 20%,rgba(140,211,95,.18),transparent 50%);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.contact h2{color:#fff}
+.contact p{opacity:.85;font-size:17px;margin-bottom:26px}
+.info{display:grid;gap:14px}
+.info a,.info div{display:flex;gap:16px;align-items:center;text-decoration:none;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px 20px;font-weight:600;font-size:19px;transition:background .2s}
+.info a:hover{background:rgba(255,255,255,.13)}
+.info i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:rgba(140,211,95,.18)}
+.info small{display:block;font-weight:400;font-size:13px;opacity:.7}
+footer{background:#07210f;color:#a9bcae;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:26px}
+footer .fb{display:flex;align-items:center;gap:12px;color:#fff;font-family:Montserrat;font-weight:700}
+footer img{width:40px;height:40px;border-radius:50%}
+
+@media(max-width:1020px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))}nav .lnk{display:none}}
+@media(max-width:860px){.hero{padding:120px 0 100px}.hero .wrap,.about .wrap,.contact .wrap{grid-template-columns:1fr}.hero:before{background:linear-gradient(180deg,rgba(7,30,16,.9),rgba(7,30,16,.8))}.trust .wrap{grid-template-columns:1fr;gap:12px}.pairs{grid-template-columns:1fr}.pic{max-width:520px}.pic .badge{right:12px;bottom:-18px;width:110px;height:110px}}
+@media(max-width:600px){.row{grid-template-columns:1fr}.svc{gap:12px}.card div.t{padding:14px}.card h3{font-size:16px}.card p{font-size:13.5px}.nav{height:72px}.brand img{width:46px;height:46px}.brand b{font-size:17px}.brand small{font-size:9px;letter-spacing:1.8px}.phone span{display:none}.phone i{width:44px;height:44px}nav .btn{display:none}nav{gap:10px}.f,.qtop{padding-inline:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="img/logo.png" alt="Vittrup Udendørsservice logo" width="58" height="58">
+      <span><b>VITTRUP</b><small>UDENDØRSSERVICE</small></span>
+    </a>
+    <nav>
+      <a class="lnk" href="#ydelser">Ydelser</a>
+      <a class="lnk" href="#foer-efter">Før og efter</a>
+      <a class="lnk" href="#om">Om mig</a>
+      <a class="lnk" href="#kontakt">Kontakt</a>
+      <a class="phone" href="tel:+4552246370" aria-label="Ring 52 24 63 70"><i><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg></i><span>52 24 63 70</span></a>
+      <a class="btn" href="#tilbud">Få tilbud</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="pill">Lokalt firma i Brande og omegn</span>
+      <h1>Flotte haver, skarpe hække og <span>rene fliser</span></h1>
+      <p class="intro">Jeg klarer det udendørs arbejde, så du kan bruge tiden på noget andet. Jeg kommer gerne ud og ser på opgaven, så vi kan snakke den igennem, og du får den mest fair pris.</p>
+      <div class="acts">
+        <a class="btn" href="#tilbud">Få et gratis tilbud</a>
+        <a class="btn ghost" href="#foer-efter">Se før og efter</a>
+      </div>
+    </div>
+
+    <div class="quote" id="tilbud">
+      <div class="qtop"><h2>Få et gratis tilbud</h2><p>Uforpligtende. Jeg svarer inden for én hverdag.</p></div>
+      <form class="f" id="qf" novalidate>
+        <div class="row">
+          <label>Navn<input name="navn" id="navn" autocomplete="name" required></label>
+          <label>Telefon<input name="telefon" id="telefon" type="tel" autocomplete="tel" required></label>
+        </div>
+        <div class="row">
+          <label>E-mail<input name="email" id="email" type="email" autocomplete="email"></label>
+          <label>Adresse<input name="adresse" id="adresse" autocomplete="street-address"></label>
+        </div>
+        <fieldset>
+          <legend>Hvad skal jeg hjælpe med?</legend>
+          <div class="chips">
+            <label><input type="checkbox" name="ydelse" value="Træfældning og beskæring">Træer</label>
+            <label><input type="checkbox" name="ydelse" value="Fliserens">Fliserens</label>
+            <label><input type="checkbox" name="ydelse" value="Hækklipning">Hækklipning</label>
+            <label><input type="checkbox" name="ydelse" value="Tag og ovenlys">Tag og ovenlys</label>
+            <label><input type="checkbox" name="ydelse" value="Tagrender">Tagrender</label>
+            <label><input type="checkbox" name="ydelse" value="Andet">Andet</label>
+          </div>
+        </fieldset>
+        <label>Beskriv opgaven<textarea name="besked" id="besked" placeholder="Fx ca. 80 m² indkørsel, der skal renses"></textarea></label>
+        <button class="btn" type="submit">Send forespørgsel</button>
+        <p class="note" id="err" hidden style="color:#b3261e">Udfyld venligst navn og telefon.</p>
+        <p class="note">Jeg bruger kun dine oplysninger til at svare dig.</p>
+      </form>
+      <div class="ok">
+        <svg width="60" height="60" viewBox="0 0 24 24" style="margin:0 auto 14px"><circle cx="12" cy="12" r="11" fill="#5c9d36"/><path d="M7 12.5l3 3 7-7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Tak for din forespørgsel</h3>
+        <p>Jeg kontakter dig hurtigst muligt. Haster det, så ring på <b>52 24 63 70</b>.</p>
+        <p class="note" style="margin-top:14px">Dit mailprogram er åbnet med din forespørgsel. Husk at trykke send.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust"><div class="wrap">
+  <div><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145a30" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><p><b>Lokalt i Brande</b><span>Jeg kører i Brande og omegn</span></p></div>
+  <div><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145a30" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i><p><b>Hurtigt svar</b><span>Svar inden for én hverdag</span></p></div>
+  <div><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#145a30" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg></i><p><b>Fast pris</b><span>Aftalt, før jeg går i gang</span></p></div>
+</div></section>
+
+<section class="band" id="ydelser">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Det kan jeg hjælpe med</span><h2>Mine ydelser</h2><p>Store og små opgaver udendørs. Er din opgave ikke på listen, så spørg alligevel.</p></div>
+    <div class="svc">
+      <article class="card"><div class="ph"><img src="img/felling.jpg" alt="Træfældning med motorsav" loading="lazy"></div><div class="t"><h3>Træfældning</h3><p>Træer fældes sikkert, også tæt på hus og hegn. Stammen skæres op, og jeg rydder op bagefter.</p></div></article>
+      <article class="card"><div class="ph"><img src="img/felling2.jpg" alt="Beskæring af træ med motorsav" loading="lazy"></div><div class="t"><h3>Beskæring og nedskæring af træer</h3><p>Træer, der er blevet for store eller skygger, beskæres eller skæres ned, så haven får lys igen.</p></div></article>
+      <article class="card"><div class="ph"><img src="img/1207.jpg" alt="Nyrenset brostensbelægning" loading="lazy"></div><div class="t"><h3>Fliserens og ukrudt</h3><p>Fliser, terrasser og indkørsler renses for alger, mos og ukrudt.</p></div></article>
+      <article class="card"><div class="ph"><img src="img/1450.jpg" alt="Nyklippet hæk" loading="lazy"></div><div class="t"><h3>Hækklipning</h3><p>Lige og skarpe hække, også de store og tilgroede. Jeg kører afklip væk.</p></div></article>
+      <article class="card"><div class="ph"><img src="img/2801.jpg" alt="Renset tag og ovenlys" loading="lazy"></div><div class="t"><h3>Tag og ovenlys</h3><p>Alger og snavs fjernes fra tag, ovenlys og overdækninger.</p></div></article>
+      <article class="card"><div class="ph"><img src="img/2777.jpg" alt="Renset tagrende" loading="lazy"></div><div class="t"><h3>Tagrender</h3><p>Jeg tømmer og renser tagrender, så vandet kan løbe frit.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="band ba" id="foer-efter">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Resultater</span><h2>Før og efter</h2><p>Billeder fra opgaver, jeg har løst. Samme sted, før og efter jeg har været der.</p></div>
+    <div class="pairs" id="pairs"></div>
+  </div>
+</section>
+
+<section class="band about" id="om">
+  <div class="wrap">
+    <div class="pic">
+      <img class="main" src="img/2329.jpg" alt="Nyklippet hæk i solskin" loading="lazy">
+      <img class="badge" src="img/logo.png" alt="" loading="lazy">
+    </div>
+    <div>
+      <span class="kicker">Om mig</span>
+      <h2>Ordentligt arbejde, lavet lokalt</h2>
+      <p>Jeg hedder Emil Vittrup Olesen og driver Vittrup Udendørsservice fra Brande. Du taler altid direkte med mig, og det er også mig, der udfører arbejdet.</p>
+      <p style="margin-top:12px">Jeg kommer gerne ud til dig og ser på opgaven, så vi kan snakke den igennem sammen. På den måde kan jeg give dig den mest fair pris, og du ved præcis, hvad du får, inden jeg går i gang.</p>
+      <div class="steps">
+        <div><em>1</em><p><b>Kontakt mig</b><span>Ring, skriv eller udfyld formularen.</span></p></div>
+        <div><em>2</em><p><b>Jeg kommer ud og ser på det</b><span>Vi snakker opgaven igennem, og du får en fair, fast pris.</span></p></div>
+        <div><em>3</em><p><b>Jeg går i gang</b><span>Til aftalt tid, og jeg rydder op efter mig.</span></p></div>
+      </div>
+      <a class="btn" href="#tilbud">Få et gratis tilbud</a>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="kontakt">
+  <div class="wrap">
+    <div>
+      <h2>Klar til at komme i gang?</h2>
+      <p>Ring eller skriv, så kommer jeg ud og ser på opgaven og giver dig en fair, fast pris.</p>
+      <a class="btn" href="#tilbud">Få et gratis tilbud</a>
+    </div>
+    <div class="info">
+      <a href="tel:+4552246370"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 006 6L16 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2"/></svg></i><p><small>Telefon</small>52 24 63 70</p></a>
+      <a href="mailto:evittrupo@gmail.com"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><p><small>E-mail</small>evittrupo@gmail.com</p></a>
+      <div><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a8dc84" stroke-width="2"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></i><p><small>Område</small>Brande og omegn</p></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span class="fb"><img src="img/logo.png" alt="">Vittrup Udendørsservice</span>
+  <span>7330 Brande · CVR 46793706 · Tlf. 52 24 63 70</span>
+</div></footer>
+
+<script>{
+const P=[["1193","1207","Rens af brosten"],["1405","1449","Ukrudt fjernet fra belægning"],["1333","1450","Hækklipning ved indkørsel"],["2310","2329","Fjernelse af ukrudt i hæk"],["2791","2801","Rens af tag og ovenlys"],["2768","2777","Tagrender"]];
+const arrow='<span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#145a30" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>';
+document.getElementById('pairs').innerHTML=P.map(([a,b,t])=>`<div class="pair"><div class="imgs"><figure><img src="img/${a}.jpg" alt="${t}, før" loading="lazy"><figcaption>Før</figcaption></figure>${arrow}<figure><img src="img/${b}.jpg" alt="${t}, efter" loading="lazy"><figcaption>Efter</figcaption></figure></div><h3>${t}</h3></div>`).join('');
+const h=document.getElementById('hdr'),on=()=>h.classList.toggle('solid',scrollY>40);addEventListener('scroll',on,{passive:true});on();
+const f=document.getElementById('qf'),box=document.querySelector('.quote'),err=document.getElementById('err');
+f.addEventListener('submit',e=>{e.preventDefault();if(!f.navn.value.trim()||!f.telefon.value.trim()){err.hidden=false;return}err.hidden=true;const y=[...f.querySelectorAll('input[name=ydelse]:checked')].map(x=>x.value).join(', ')||'Ikke angivet';const body=`Navn: ${f.navn.value}\nTelefon: ${f.telefon.value}\nE-mail: ${f.email.value}\nAdresse: ${f.adresse.value}\nYdelser: ${y}\n\n${f.besked.value}`;location.href='mailto:evittrupo@gmail.com?subject='+encodeURIComponent('Tilbud: '+f.navn.value)+'&body='+encodeURIComponent(body);box.classList.add('sent')});
+}</script>
+</body>
+</html>
